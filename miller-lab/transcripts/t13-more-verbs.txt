@@ -1,0 +1,21 @@
+$ mlr --csv rename customer,buyer fixtures/orders.csv | head -2
+order_id,buyer,product,quantity,unit_price
+1001,ana,notebook,3,4.50
+
+$ mlr --csv top -n 2 -f quantity fixtures/orders.csv
+top_idx,quantity_top
+1,20
+2,12
+
+$ mlr --csv uniq -c -g product fixtures/orders.csv
+product,count
+notebook,3
+pencil,3
+mug,1
+teapot,1
+kettle,1
+
+$ mlr --csv head -n 2 fixtures/orders.csv fixtures/orders.csv
+order_id,customer,product,quantity,unit_price
+1001,ana,notebook,3,4.50
+1002,ben,pencil,12,0.80

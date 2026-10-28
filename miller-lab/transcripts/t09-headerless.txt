@@ -1,0 +1,16 @@
+$ mlr --csv --implicit-csv-header cat fixtures/readings.csv
+1,2,3
+monday,21.5,ok
+tuesday,19.0,ok
+wednesday,23.25,check
+
+$ mlr --csv --implicit-csv-header put '$warm = ($2 > 20)' fixtures/readings.csv
+1,2,3,warm
+monday,21.5,ok,true
+tuesday,19.0,ok,false
+wednesday,23.25,check,true
+
+$ mlr --nidx cat fixtures/readings.csv
+monday,21.5,ok
+tuesday,19.0,ok
+wednesday,23.25,check

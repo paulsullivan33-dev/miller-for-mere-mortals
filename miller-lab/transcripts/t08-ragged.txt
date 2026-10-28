@@ -1,0 +1,12 @@
+$ mlr --csv cat fixtures/ragged.csv
+a,b,c
+1,2,3
+mlr: CSV header/data length mismatch 3 != 2 at filename fixtures/ragged.csv row 3
+exit=1
+
+$ mlr --csv --allow-ragged-csv-input cat fixtures/ragged.csv
+a,b,c
+1,2,3
+4,5,
+6,7,8,9
+exit=0

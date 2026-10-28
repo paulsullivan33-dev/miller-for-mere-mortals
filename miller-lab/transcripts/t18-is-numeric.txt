@@ -1,0 +1,5 @@
+$ mlr --csv filter 'is_numeric($count) && $count > 10' fixtures/stock.csv
+item,count
+bolts,40
+washers,17
+exit=0

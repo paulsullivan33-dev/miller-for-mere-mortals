@@ -1,0 +1,16 @@
+$ mlr --csv join -j customer --ul -f fixtures/customers.csv fixtures/orders.csv
+customer,city,since,order_id,product,quantity,unit_price
+ana,Lisbon,2019,1001,notebook,3,4.50
+ben,Porto,2021,1002,pencil,12,0.80
+ana,Lisbon,2019,1003,mug,2,9.25
+cora,Lisbon,2018,1004,notebook,1,4.50
+ben,Porto,2021,1005,teapot,1,24.00
+dario,Braga,2023,1006,pencil,20,0.80
+cora,Lisbon,2018,1007,kettle,1,31.50
+ana,Lisbon,2019,1008,pencil,6,0.80
+
+$ mlr --csv put '$total = fmtnum($quantity * $unit_price, "%0.2f")' fixtures/orders.csv | head -4
+order_id,customer,product,quantity,unit_price,total
+1001,ana,notebook,3,4.50,13.50
+1002,ben,pencil,12,0.80,9.60
+1003,ana,mug,2,9.25,18.50

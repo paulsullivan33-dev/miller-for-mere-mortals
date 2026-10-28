@@ -1,0 +1,10 @@
+$ mlr --csv --ojson fixtures/orders.csv | head -14
+mlr: verb "fixtures/orders.csv" not found. Please use "mlr -l" for a list.
+
+$ mlr --ijson --ocsv fixtures/orders.json
+mlr: verb "fixtures/orders.json" not found. Please use "mlr -l" for a list.
+
+$ mlr --icsv --otsv cat fixtures/orders.csv | head -3
+order_id	customer	product	quantity	unit_price
+1001	ana	notebook	3	4.50
+1002	ben	pencil	12	0.80

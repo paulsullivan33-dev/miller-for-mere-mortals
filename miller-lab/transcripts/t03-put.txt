@@ -1,0 +1,17 @@
+$ mlr --csv put '$total = $quantity * $unit_price' fixtures/orders.csv
+order_id,customer,product,quantity,unit_price,total
+1001,ana,notebook,3,4.50,13.5
+1002,ben,pencil,12,0.80,9.600000000000001
+1003,ana,mug,2,9.25,18.5
+1004,cora,notebook,1,4.50,4.5
+1005,ben,teapot,1,24.00,24
+1006,dario,pencil,20,0.80,16
+1007,cora,kettle,1,31.50,31.5
+1008,ana,pencil,6,0.80,4.800000000000001
+1009,eli,notebook,4,4.50,18
+
+$ mlr --csv put '$label = $customer . " bought " . $product' fixtures/orders.csv | head -4
+order_id,customer,product,quantity,unit_price,label
+1001,ana,notebook,3,4.50,ana bought notebook
+1002,ben,pencil,12,0.80,ben bought pencil
+1003,ana,mug,2,9.25,ana bought mug

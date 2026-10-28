@@ -1,0 +1,14 @@
+$ mlr --version
+mlr 6.22.0
+
+$ mlr cat fixtures/orders.csv
+1=order_id,2=customer,3=product,4=quantity,5=unit_price
+1=1001,2=ana,3=notebook,4=3,5=4.50
+1=1002,2=ben,3=pencil,4=12,5=0.80
+1=1003,2=ana,3=mug,4=2,5=9.25
+1=1004,2=cora,3=notebook,4=1,5=4.50
+1=1005,2=ben,3=teapot,4=1,5=24.00
+1=1006,2=dario,3=pencil,4=20,5=0.80
+1=1007,2=cora,3=kettle,4=1,5=31.50
+1=1008,2=ana,3=pencil,4=6,5=0.80
+1=1009,2=eli,3=notebook,4=4,5=4.50

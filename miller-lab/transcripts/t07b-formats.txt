@@ -1,0 +1,23 @@
+$ mlr --csv --ojson cat fixtures/orders.csv | head -12
+[
+{
+  "order_id": 1001,
+  "customer": "ana",
+  "product": "notebook",
+  "quantity": 3,
+  "unit_price": 4.50
+},
+{
+  "order_id": 1002,
+  "customer": "ben",
+  "product": "pencil",
+
+$ mlr --ijson --ocsv cat fixtures/orders.json
+order_id,customer,product,quantity,unit_price
+2001,ana,notebook,2,4.50
+2002,ben,mug,1,9.25
+2003,cora,pencil,10,0.80
+
+$ mlr --csv --ojsonl cat fixtures/orders.csv | head -2
+{"order_id": 1001, "customer": "ana", "product": "notebook", "quantity": 3, "unit_price": 4.50}
+{"order_id": 1002, "customer": "ben", "product": "pencil", "quantity": 12, "unit_price": 0.80}

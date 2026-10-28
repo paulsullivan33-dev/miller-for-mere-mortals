@@ -1,0 +1,13 @@
+$ mlr --csv put '$total = $quantity * $unit_price' then stats1 -a sum -f total -g customer then sort -nr total_sum then put '$total_sum = fmtnum($total_sum, "%0.2f")' fixtures/orders.csv
+customer,total_sum
+ana,36.80
+cora,36.00
+ben,33.60
+eli,18.00
+dario,16.00
+
+$ mlr --icsv --otsv filter '$customer == "ana"' then cut -f product,quantity,unit_price fixtures/orders.csv
+product	quantity	unit_price
+notebook	3	4.50
+mug	2	9.25
+pencil	6	0.80

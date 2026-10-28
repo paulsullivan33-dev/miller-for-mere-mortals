@@ -1,0 +1,31 @@
+$ mlr --csv cut -f customer,product,quantity fixtures/orders.csv
+customer,product,quantity
+ana,notebook,3
+ben,pencil,12
+ana,mug,2
+cora,notebook,1
+ben,teapot,1
+dario,pencil,20
+cora,kettle,1
+ana,pencil,6
+eli,notebook,4
+
+$ mlr --csv filter '$quantity > 2' fixtures/orders.csv
+order_id,customer,product,quantity,unit_price
+1001,ana,notebook,3,4.50
+1002,ben,pencil,12,0.80
+1006,dario,pencil,20,0.80
+1008,ana,pencil,6,0.80
+1009,eli,notebook,4,4.50
+
+$ mlr --csv sort -f customer -nr quantity fixtures/orders.csv
+order_id,customer,product,quantity,unit_price
+1008,ana,pencil,6,0.80
+1001,ana,notebook,3,4.50
+1003,ana,mug,2,9.25
+1002,ben,pencil,12,0.80
+1005,ben,teapot,1,24.00
+1004,cora,notebook,1,4.50
+1007,cora,kettle,1,31.50
+1006,dario,pencil,20,0.80
+1009,eli,notebook,4,4.50

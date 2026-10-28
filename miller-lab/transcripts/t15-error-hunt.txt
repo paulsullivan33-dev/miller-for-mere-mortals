@@ -1,0 +1,8 @@
+$ mlr --csv put '$double = $count * 2' then filter 'is_error($double)' fixtures/stock.csv
+item,count,double
+screws,n/a,(error)
+exit=0
+
+$ mlr --csv filter '!is_numeric($count)' fixtures/stock.csv
+item,count
+screws,n/a

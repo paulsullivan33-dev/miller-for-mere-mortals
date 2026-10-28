@@ -1,0 +1,20 @@
+$ mlr --csv put '$double = $count * 2' fixtures/stock.csv
+item,count,double
+bolts,40,80
+screws,n/a,(error)
+washers,17,34
+exit=0
+
+$ mlr --csv put '$x = $item + 1' fixtures/stock.csv
+item,count,x
+bolts,40,(error)
+screws,n/a,(error)
+washers,17,(error)
+exit=0
+
+$ mlr --csv filter '$count > 10' fixtures/stock.csv
+item,count
+bolts,40
+screws,n/a
+washers,17
+exit=0

@@ -1,0 +1,13 @@
+$ mlr --csv put 'begin {total_qty = 0} $running = (total_qty += $quantity)' fixtures/orders.csv
+mlr: cannot parse DSL expression.
+mlr: parse error: unexpected op_plus_equals ("+=")
+
+$ mlr --csv put '$n = NR' fixtures/orders.csv | head -3
+order_id,customer,product,quantity,unit_price,n
+1001,ana,notebook,3,4.50,1
+1002,ben,pencil,12,0.80,2
+
+$ mlr --csv filter -q '$quantity > 10' fixtures/orders.csv; echo exit=$?
+exit=0
+$ mlr --csv filter -q '$quantity > 100' fixtures/orders.csv; echo exit=$?
+exit=0

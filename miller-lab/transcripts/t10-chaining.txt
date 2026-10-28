@@ -1,0 +1,16 @@
+$ mlr --csv filter '$quantity >= 2' then cut -f customer,product,quantity then sort -r quantity fixtures/orders.csv
+customer,product,quantity
+ana,pencil,6
+eli,notebook,4
+ana,notebook,3
+dario,pencil,20
+ana,mug,2
+ben,pencil,12
+
+$ mlr --csv put '$total = $quantity * $unit_price' then stats1 -a sum -f total -g customer then sort -nr total_sum fixtures/orders.csv
+customer,total_sum
+ana,36.8
+cora,36
+ben,33.6
+eli,18
+dario,16

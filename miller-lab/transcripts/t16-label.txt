@@ -1,0 +1,11 @@
+$ mlr --csv --implicit-csv-header label day,temp,status fixtures/readings.csv
+day,temp,status
+monday,21.5,ok
+tuesday,19.0,ok
+wednesday,23.25,check
+
+$ mlr --nidx --opprint cat fixtures/readings.csv
+1
+monday,21.5,ok
+tuesday,19.0,ok
+wednesday,23.25,check

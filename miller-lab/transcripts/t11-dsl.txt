@@ -1,0 +1,22 @@
+$ mlr --csv put '$size = ($quantity >= 10) ? "bulk" : "small"' fixtures/orders.csv
+order_id,customer,product,quantity,unit_price,size
+1001,ana,notebook,3,4.50,small
+1002,ben,pencil,12,0.80,bulk
+1003,ana,mug,2,9.25,small
+1004,cora,notebook,1,4.50,small
+1005,ben,teapot,1,24.00,small
+1006,dario,pencil,20,0.80,bulk
+1007,cora,kettle,1,31.50,small
+1008,ana,pencil,6,0.80,small
+1009,eli,notebook,4,4.50,small
+
+$ mlr --csv put '$shout = toupper($product)' fixtures/orders.csv | head -3
+order_id,customer,product,quantity,unit_price,shout
+1001,ana,notebook,3,4.50,NOTEBOOK
+1002,ben,pencil,12,0.80,PENCIL
+
+$ mlr --csv put '$product = sub($product, "pencil", "pen")' fixtures/orders.csv | head -4
+order_id,customer,product,quantity,unit_price
+1001,ana,notebook,3,4.50
+1002,ben,pen,12,0.80
+1003,ana,mug,2,9.25

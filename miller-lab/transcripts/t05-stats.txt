@@ -1,0 +1,20 @@
+$ mlr --csv stats1 -a sum,mean,count -f quantity,unit_price fixtures/orders.csv
+quantity_sum,quantity_mean,quantity_count,unit_price_sum,unit_price_mean,unit_price_count
+50,5.555555555555555,9,80.64999999999999,8.96111111111111,9
+
+$ mlr --csv stats1 -a sum -f quantity -g customer fixtures/orders.csv
+customer,quantity_sum
+ana,11
+ben,13
+cora,2
+dario,20
+eli,4
+
+$ mlr --csv stats1 -a sum -f count fixtures/stock.csv
+count_sum
+57
+exit=0
+
+$ mlr --csv count fixtures/orders.csv
+count
+9

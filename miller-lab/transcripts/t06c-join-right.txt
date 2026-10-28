@@ -1,0 +1,14 @@
+$ mlr --csv join -j customer --ur -f fixtures/customers.csv fixtures/orders.csv | tail -2
+mlr: CSV schema change: first keys "customer,city,since,order_id,product,quantity,unit_price"; current keys "order_id,customer,product,quantity,unit_price"
+mlr: exiting due to data error
+cora,Lisbon,2018,1007,kettle,1,31.50
+ana,Lisbon,2019,1008,pencil,6,0.80
+
+$ mlr --csv filter '$quantity >= 2' then cut -f customer,product,quantity then sort -nr quantity fixtures/orders.csv
+customer,product,quantity
+dario,pencil,20
+ben,pencil,12
+ana,pencil,6
+eli,notebook,4
+ana,notebook,3
+ana,mug,2

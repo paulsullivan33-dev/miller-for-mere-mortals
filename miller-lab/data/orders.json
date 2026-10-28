@@ -1,0 +1,5 @@
+[
+  {"order_id": 2001, "customer": "ana", "product": "notebook", "quantity": 2, "unit_price": 4.50},
+  {"order_id": 2002, "customer": "ben", "product": "mug", "quantity": 1, "unit_price": 9.25},
+  {"order_id": 2003, "customer": "cora", "product": "pencil", "quantity": 10, "unit_price": 0.80}
+]
